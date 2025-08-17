@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Windows 11 Color Palette -->
+    <!-- Fluent Design System Colors -->
+    <Color x:Key="Primary">#0078D4</Color>
+    <Color x:Key="PrimaryDark">#106EBE</Color>
+    <Color x:Key="PrimaryDarkText">#FFFFFF</Color>
+    <Color x:Key="Secondary">#F3F2F1</Color>
+    <Color x:Key="SecondaryDarkText">#323130</Color>
+    <Color x:Key="Tertiary">#005A9E</Color>
+
+    <!-- Windows 11 Neutrals -->
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="Magenta">#B146C2</Color>
+    <Color x:Key="MidnightBlue">#323130</Color>
+    <Color x:Key="OffBlack">#1C1C1C</Color>
+
+    <!-- Windows 11 Gray Scale -->
+    <Color x:Key="Gray10">#FAFAFA</Color>
+    <Color x:Key="Gray20">#F6F6F6</Color>
+    <Color x:Key="Gray30">#F0F0F0</Color>
+    <Color x:Key="Gray40">#E8E8E8</Color>
+    <Color x:Key="Gray50">#E1E1E1</Color>
+    <Color x:Key="Gray60">#D2D0CE</Color>
+    <Color x:Key="Gray70">#C8C6C4</Color>
+    <Color x:Key="Gray80">#B3B0AD</Color>
+    <Color x:Key="Gray90">#979593</Color>
+    <Color x:Key="Gray100">#8A8886</Color>
+    <Color x:Key="Gray110">#797775</Color>
+    <Color x:Key="Gray120">#605E5C</Color>
+    <Color x:Key="Gray130">#484644</Color>
+    <Color x:Key="Gray140">#3B3A39</Color>
+    <Color x:Key="Gray150">#323130</Color>
+    <Color x:Key="Gray160">#292827</Color>
+    <Color x:Key="Gray170">#201F1E</Color>
+    <Color x:Key="Gray180">#1B1A19</Color>
+    <Color x:Key="Gray190">#161514</Color>
+    <Color x:Key="Gray200">#11100F</Color>
+
+    <!-- Legacy Gray Colors for compatibility -->
+    <Color x:Key="Gray300">#979593</Color>
+    <Color x:Key="Gray400">#B3B0AD</Color>
+    <Color x:Key="Gray500">#605E5C</Color>
+    <Color x:Key="Gray600">#3B3A39</Color>
+    <Color x:Key="Gray900">#292827</Color>
+    <Color x:Key="Gray950">#1B1A19</Color>
+
+    <!-- Status Colors -->
+    <Color x:Key="Success">#107C10</Color>
+    <Color x:Key="Warning">#FF8C00</Color>
+    <Color x:Key="Error">#D13438</Color>
+    <Color x:Key="Info">#0078D4</Color>
+
+    <!-- Windows 11 Accent Colors -->
+    <Color x:Key="Blue">#0078D4</Color>
+    <Color x:Key="Green">#107C10</Color>
+    <Color x:Key="Orange">#FF8C00</Color>
+    <Color x:Key="Purple">#881798</Color>
+    <Color x:Key="Red">#D13438</Color>
+
+    <!-- Brush Resources -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
+
+    <!-- Windows 11 Specific Brushes -->
+    <SolidColorBrush x:Key="SystemAccentBrush" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="SystemBackgroundBrush" Color="{StaticResource White}"/>
+    <SolidColorBrush x:Key="SystemForegroundBrush" Color="{StaticResource Gray150}"/>
+    <SolidColorBrush x:Key="SystemChromeLowBrush" Color="{StaticResource Gray20}"/>
+    <SolidColorBrush x:Key="SystemChromeMediumBrush" Color="{StaticResource Gray40}"/>
+    <SolidColorBrush x:Key="SystemChromeHighBrush" Color="{StaticResource Gray60}"/>
+
+    <!-- Legacy Gray Brushes for compatibility -->
+    <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}"/>
+    <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}"/>
+    <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray90}"/>
+    <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray80}"/>
+    <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray120}"/>
+    <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray140}"/>
+    <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray160}"/>
+    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray180}"/>
+</ResourceDictionary>

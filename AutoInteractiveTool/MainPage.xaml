@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoInteractiveTool.MainPage"
+             Title="API Data Sender"
+             BackgroundColor="{StaticResource Gray10}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="24">
+            
+            <!-- Header Section -->
+            <VerticalStackLayout Spacing="8">
+                <Label
+                    Text="Excel HTTP POST Sender"
+                    Style="{StaticResource Win11LargeTitleText}"
+                    HorizontalOptions="Start"
+                    SemanticProperties.HeadingLevel="Level1" />
+                
+                <Label
+                    Text="Send Excel data to your API endpoint with Bearer token authentication"
+                    Style="{StaticResource Win11BodyText}"
+                    TextColor="{StaticResource Gray120}"
+                    HorizontalOptions="Start" />
+            </VerticalStackLayout>
+
+            <!-- API Configuration Section -->
+            <Border Style="{StaticResource Win11Card}">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="API Configuration" 
+                           Style="{StaticResource Win11SubtitleText}" />
+                    
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="API URL" 
+                               Style="{StaticResource Win11BodyText}" />
+                        <Border BackgroundColor="{StaticResource White}"
+                                Stroke="{StaticResource Gray60}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 4"
+                                Padding="2">
+                            <Entry x:Name="UrlEntry"
+                                   Placeholder="https://api.example.com/data"
+                                   Text="{Binding Url}"
+                                   Style="{StaticResource Win11Entry}"
+                                   ClearButtonVisibility="WhileEditing" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Bearer Token" 
+                               Style="{StaticResource Win11BodyText}" />
+                        <Border BackgroundColor="{StaticResource White}"
+                                Stroke="{StaticResource Gray60}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 4"
+                                Padding="2">
+                            <Entry x:Name="TokenEntry"
+                                   Placeholder="Enter your Bearer token"
+                                   Text="{Binding BearerToken}"
+                                   IsPassword="True"
+                                   Style="{StaticResource Win11Entry}"
+                                   ClearButtonVisibility="WhileEditing" />
+                        </Border>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- File Selection Section -->
+            <Border Style="{StaticResource Win11Card}">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="Excel File Selection" 
+                           Style="{StaticResource Win11SubtitleText}" />
+                    
+                    <Button x:Name="SelectFileButton"
+                            Text="📁 Select Excel File (.xlsx/.xls)"
+                            Clicked="OnSelectFileClicked"
+                            Style="{StaticResource Win11SecondaryButton}"
+                            HorizontalOptions="Start" />
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="SelectedFileLabel"
+                               Text="No file selected"
+                               Style="{StaticResource Win11BodyText}"
+                               TextColor="{StaticResource Gray120}"
+                               IsVisible="True" />
+
+                        <Label x:Name="FileValidationLabel"
+                               Text=""
+                               Style="{StaticResource Win11ErrorText}"
+                               IsVisible="False" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Processing Section -->
+            <Border Style="{StaticResource Win11Card}">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="Processing" 
+                           Style="{StaticResource Win11SubtitleText}" />
+                    
+                    <Button x:Name="ProcessButton"
+                            Text="▶️ Start Processing"
+                            Clicked="OnProcessClicked"
+                            Style="{StaticResource Win11PrimaryButton}"
+                            IsEnabled="False"
+                            HorizontalOptions="Start" />
+
+                    <VerticalStackLayout Spacing="12" IsVisible="False" x:Name="ProgressSection">
+                        <ProgressBar x:Name="ProcessProgressBar"
+                                     Progress="0"
+                                     Style="{StaticResource Win11ProgressBar}" />
+
+                        <Label x:Name="ProgressLabel"
+                               Text=""
+                               Style="{StaticResource Win11CaptionText}"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Results Section -->
+            <Border Style="{StaticResource Win11Card}">
+                <VerticalStackLayout Spacing="16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="Processing Log" 
+                               Style="{StaticResource Win11SubtitleText}"
+                               Grid.Column="0" />
+                        
+                        <Button x:Name="ClearLogButton"
+                                Text="•✨ Clear"
+                                Clicked="OnClearLogClicked"
+                                Style="{StaticResource Win11DangerButton}"
+                                Grid.Column="1" />
+                    </Grid>
+
+                    <Border BackgroundColor="{StaticResource Gray20}"
+                            Stroke="{StaticResource Gray60}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 4"
+                            Padding="16">
+                        <ScrollView HeightRequest="200">
+                            <Label x:Name="LogLabel"
+                                   Text="Ready to process..."
+                                   FontFamily="Consolas"
+                                   FontSize="12"
+                                   TextColor="{StaticResource Gray150}"
+                                   LineBreakMode="WordWrap" />
+                        </ScrollView>
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
